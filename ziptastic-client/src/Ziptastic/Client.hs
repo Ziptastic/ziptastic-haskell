@@ -36,42 +36,49 @@ import           Data.Text (Text)
 import           Network.HTTP.Client (Manager)
 import           Servant.API ((:<|>)(..))
 import           Servant.Client
-  ( BaseUrl(..), ClientEnv(..), ClientM, Scheme(..)
+  ( BaseUrl(..), ClientEnv(..), ClientM, Scheme(..), ServantError
   , client, runClientM
   )
 
 import           Ziptastic.Core (ApiKey, ForApi(..), LocaleInfo)
 import qualified Ziptastic.Core as Core
 
+-- | Performs a forward geocode lookup at the given country and postal code.
+--
+-- The success result is a list because in rare cases you may receive multiple records.
+-- If the request fails the result will be 'Left' with an error.
 forwardGeocode :: ApiKey
                -> Manager      -- ^ HTTP connection manager
                -> CountryCode  -- ^ country
                -> Text         -- ^ postal code
-               -> IO (Either String [LocaleInfo])
-forwardGeocode apiKey manager countryCode postalCode = strLeft <$> runClientM func (ClientEnv manager baseUrl)
+               -> IO (Either ServantError [LocaleInfo])
+forwardGeocode apiKey manager countryCode postalCode = runClientM func (ClientEnv manager baseUrl)
   where func = forwardGeocode' (apiClient apiKey) (ForApi countryCode) postalCode
 
 -- | Performs a reverse geocode lookup at the given coordinates using a default radius of 5000 meters.
+--
+-- The success result is a list because in rare cases you may receive multiple records.
+-- If the request fails the result will be 'Left' with an error.
 reverseGeocode :: ApiKey
                -> Manager -- ^ HTTP connection manager
                -> Double  -- ^ latitude
                -> Double  -- ^ longitude
-               -> IO (Either String [LocaleInfo])
+               -> IO (Either ServantError [LocaleInfo])
 reverseGeocode apiKey manager lat long = reverseGeocodeWithRadius apiKey manager lat long 5000
 
 -- | Performs a reverse geocode lookup at the given coordinates using a specified radius in meters.
+--
+-- The success result is a list because in rare cases you may receive multiple records.
+-- If the request fails the result will be 'Left' with an error.
 reverseGeocodeWithRadius :: ApiKey
                          -> Manager -- ^ HTTP connection manager
                          -> Double  -- ^ latitude
                          -> Double  -- ^ longitude
                          -> Int     -- ^ radius (in meters)
-                         -> IO (Either String [LocaleInfo])
-reverseGeocodeWithRadius apiKey manager lat long radius = strLeft <$> runClientM func (ClientEnv manager baseUrl)
+                         -> IO (Either ServantError [LocaleInfo])
+reverseGeocodeWithRadius apiKey manager lat long radius = runClientM func (ClientEnv manager baseUrl)
   where func = reverseGeocodeWithRadius' (mkReverseGeocode (apiClient apiKey) lat long) radius
 
-strLeft :: Show e => Either e a -> Either String a
-strLeft (Left e)  = Left (show e)
-strLeft (Right a) = Right a
 
 data ApiClient = ApiClient
   { forwardGeocode'  :: ForApi CountryCode -> Text -> ClientM [LocaleInfo]

@@ -1,15 +1,15 @@
 name:                ziptastic-core
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:
-  Core Servant specification for the Ziptastic API (https://www.getziptastic.com) for doing forward and reverse geocoding.
+  Core Servant specification for the Ziptastic API for doing forward and reverse geocoding.
 description:
   This package provides a type-safe Servant specification for the Ziptastic
-  (https://www.getziptastic.com) API for doing forward and reverse geocoding
+  (<https://www.getziptastic.com>) API for doing forward and reverse geocoding
   via zip/postal code, latitude, and longitude.
   .
-  If you want to use the Ziptastic API in your application, try the ziptastic-client package.
+  If you want to use the Ziptastic API in your application, try the @ziptastic-client@ package.
   .
-  This package is maintained by Grafted-In (https://www.graftedin.io/).
+  This package is maintained by Grafted-In (<https://www.graftedin.io/>).
 homepage:            https://github.com/Ziptastic/ziptastic-haskell#readme
 license:             BSD3
 license-file:        LICENSE
@@ -21,21 +21,24 @@ build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
 tested-with:         GHC==8.0.2
+extra-source-files:
+  CHANGELOG.md
+  README.md
 
 library
   hs-source-dirs:  src
   exposed-modules: Ziptastic.Core
   build-depends:
-      aeson
-    , base >= 4.7 && < 5
-    , bytestring
-    , http-api-data
-    , iso3166-country-codes
-    , servant
-    , text
-    , tz
+      aeson                 >= 0.7 && < 1.2
+    , base                  >= 4.7 && < 5
+    , bytestring            == 0.10.*
+    , http-api-data         == 0.3.*
+    , iso3166-country-codes >= 0.20140203.8
+    , servant               >= 0.9 && < 0.11
+    , text                  >= 0.11
+    , tz                    == 0.1.*
   default-language: Haskell2010
-  extensions:
+  other-extensions:
     DataKinds
     DeriveGeneric
     FlexibleInstances
