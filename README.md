@@ -2,6 +2,7 @@
 
 [![Haskell Programming Language](https://img.shields.io/badge/language-Haskell-blue.svg)](http://www.haskell.org)
 [![BSD3 License](http://img.shields.io/badge/license-BSD3-brightgreen.svg)](https://tldrlegal.com/license/bsd-3-clause-license-%28revised%29)
+[![Build status](https://travis-ci.org/Ziptastic/ziptastic-haskell.svg?branch=master)](https://travis-ci.org/Ziptastic/ziptastic-haskell)
 
 This repository contains the official Haskell binding libraries for the [Ziptastic](https://www.getziptastic.com) API providing forward and reverse geocoding via country, zip code (postal code), latitude, and longitude.
 
