@@ -1,5 +1,5 @@
 name:                ziptastic-core
-version:             0.1.0.1
+version:             0.2.0.0
 synopsis:
   Core Servant specification for the Ziptastic API for doing forward and reverse geocoding.
 description:
@@ -20,7 +20,7 @@ category:            Web
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
-tested-with:         GHC==8.0.2
+tested-with:         GHC == 8.0.2
 extra-source-files:
   CHANGELOG.md
   README.md

@@ -1,7 +1,4 @@
-{-# LANGUAGE
-    OverloadedStrings
-  , QuasiQuotes
-#-}
+{-# LANGUAGE OverloadedStrings, QuasiQuotes #-}
 
 module Main (main) where
 

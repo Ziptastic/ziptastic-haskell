@@ -1,11 +1,4 @@
-{-# LANGUAGE
-    DataKinds
-  , DeriveGeneric
-  , FlexibleInstances
-  , GeneralizedNewtypeDeriving
-  , OverloadedStrings
-  , TypeOperators
-#-}
+{-# LANGUAGE DataKinds, DeriveGeneric, FlexibleInstances, GeneralizedNewtypeDeriving, OverloadedStrings, TypeOperators #-}
 
 -- | This module provides a complete and type-safe API specification for
 -- Ziptastic's forward and reverse geocoding API using Servant
@@ -19,9 +12,7 @@ module Ziptastic.Core
   , LocaleCoords(..)
   , LocaleInfo(..)
   , baseUrlHost
-  , baseUrlIsHttps
   , baseUrlPath
-  , baseUrlPort
   ) where
 
 import           Control.Monad (when)
@@ -125,14 +116,8 @@ type ReverseGeocodingApi
 
 
 -- API URL components
-baseUrlIsHttps :: Bool
-baseUrlIsHttps = True
-
 baseUrlHost :: String
 baseUrlHost = "zip.getziptastic.com"
-
-baseUrlPort :: Int
-baseUrlPort = 443
 
 baseUrlPath :: String
 baseUrlPath = ""
