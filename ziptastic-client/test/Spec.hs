@@ -2,6 +2,8 @@
 
 module Main (main) where
 
+import           Prelude ()
+import           Prelude.Compat
 import           Data.ISO3166_CountryCodes (CountryCode(US))
 import           Network.HTTP.Client (newManager)
 import           Network.HTTP.Client (defaultManagerSettings)

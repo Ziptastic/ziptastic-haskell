@@ -27,7 +27,8 @@ library
   hs-source-dirs:  src
   exposed-modules: Ziptastic.Client
   build-depends:
-      base                  >= 4.8 && < 5
+      base                  >= 4.7 && < 5
+    , base-compat           == 0.9.*
     , http-client
     , iso3166-country-codes
     , servant               >= 0.9 && <= 0.11
@@ -47,6 +48,7 @@ test-suite test-client
   main-is:             Spec.hs
   build-depends:
       base
+    , base-compat
     , hspec
     , http-client
     , http-client-tls
@@ -56,6 +58,9 @@ test-suite test-client
     , ziptastic-client
   ghc-options:      -threaded -rtsopts -with-rtsopts=-N
   default-language: Haskell2010
+  other-extensions:
+    LambdaCase
+    OverloadedStrings
 
 
 source-repository head

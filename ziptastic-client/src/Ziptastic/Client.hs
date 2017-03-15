@@ -26,6 +26,8 @@ module Ziptastic.Client
   , reverseGeocodeWithRadius
   ) where
 
+import           Prelude ()
+import           Prelude.Compat
 import           Data.ISO3166_CountryCodes (CountryCode)
 import           Data.Proxy (Proxy(..))
 import           Data.Text (Text)
