@@ -15,6 +15,8 @@ module Ziptastic.Core
   , baseUrlPath
   ) where
 
+import           Prelude ()
+import           Prelude.Compat
 import           Control.Monad (when)
 import           Data.ISO3166_CountryCodes (CountryCode)
 import qualified Data.Aeson as Json

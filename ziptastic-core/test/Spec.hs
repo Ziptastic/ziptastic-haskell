@@ -2,6 +2,8 @@
 
 module Main (main) where
 
+import           Prelude ()
+import           Prelude.Compat
 import           Control.Monad
 import           Data.Aeson (decodeStrict')
 import qualified Data.ISO3166_CountryCodes as CC
