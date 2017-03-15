@@ -30,7 +30,7 @@ library
   exposed-modules: Ziptastic.Core
   build-depends:
       aeson                 >= 0.7 && < 1.2
-    , base                  >= 4.7 && < 5
+    , base                  >= 4.8 && < 5
     , bytestring            == 0.10.*
     , http-api-data         == 0.3.*
     , iso3166-country-codes >= 0.20140203.8

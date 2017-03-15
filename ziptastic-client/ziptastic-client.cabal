@@ -27,7 +27,7 @@ library
   hs-source-dirs:  src
   exposed-modules: Ziptastic.Client
   build-depends:
-      base                  >= 4.7 && < 5
+      base                  >= 4.8 && < 5
     , http-client
     , iso3166-country-codes
     , servant               >= 0.9 && <= 0.11
