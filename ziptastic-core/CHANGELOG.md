@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0.1
+
+  * Support GHC 7.8.
+
 ## 0.2.0.0
 
   * Don't export scheme and port for base URL since Ziptastic supports both HTTP and HTTPS.

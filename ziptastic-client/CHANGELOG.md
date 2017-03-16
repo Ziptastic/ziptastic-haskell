@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0.1
+
+  * Improve documentation for region fields.
+  * Support GHC 7.8.
+
 ## 0.3.0.0
 
   * Detect if a `Manager` supports TLS and switch between HTTP and HTTPS automatically.
