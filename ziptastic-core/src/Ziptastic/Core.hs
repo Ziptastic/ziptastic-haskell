@@ -44,9 +44,9 @@ data LocaleInfo = LocaleInfo
   , localeCoords       :: Maybe LocaleCoords
   , localeCountry      :: CountryCode
   , localeCounty       :: Maybe Text -- ^ If given, text will never be empty.
-  , localeRegionFull   :: Maybe Text -- ^ If given, text will never be empty.
-  , localeRegionAbbrev :: Maybe Text -- ^ If given, text will never be empty.
-  , localePostalCode   :: Text       -- ^ Will never be empty.
+  , localeRegionFull   :: Maybe Text -- ^ In the US, this is a state name (e.g. Michigan). If given, text will never be empty.
+  , localeRegionAbbrev :: Maybe Text -- ^ In the US, this is a state abbreviation (e.g. MI). If given, text will never be empty.
+  , localePostalCode   :: Text       -- ^ I.e. zip code. Text will never be empty.
   , localeTimeZone     :: Maybe TZLabel
   } deriving (Eq, Generic, Show)
 
