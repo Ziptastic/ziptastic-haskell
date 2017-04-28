@@ -1,4 +1,7 @@
-resolver: lts-8.5
+resolver: lts-8.12
 packages:
   - 'ziptastic-core'
   - 'ziptastic-client'
+
+nix:
+  packages: [zlib.dev, zlib.out, pkgconfig, haskell.compiler.ghc802]
