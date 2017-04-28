@@ -1,5 +1,5 @@
 name:                ziptastic-client
-version:             0.3.0.1
+version:             0.3.0.2
 synopsis:
   A type-safe client for the Ziptastic API for doing forward and reverse geocoding.
 description:
@@ -31,10 +31,10 @@ library
     , base-compat           == 0.9.*
     , http-client
     , iso3166-country-codes
-    , servant               >= 0.9 && <= 0.11
-    , servant-client        >= 0.9 && <= 0.11
+    , servant               >= 0.9 && < 0.11
+    , servant-client        >= 0.9 && < 0.11
     , text
-    , ziptastic-core        == 0.2.0.1
+    , ziptastic-core        >= 0.2.0.1 && < 0.2.1
   default-language: Haskell2010
   other-extensions:
     DataKinds
