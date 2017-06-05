@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0.3
+
+  * Allow `servant` and `servant-client` version 0.11.
+
+## 0.3.0.2
+
+  * Allow `aeson` version 1.2.
+
 ## 0.3.0.1
 
   * Improve documentation for region fields.
