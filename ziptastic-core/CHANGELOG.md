@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0.3
+
+  * Allow `servant` version 0.11.
+
+## 0.2.0.2
+
+  * Allow `aeson` version 1.2.
+
 ## 0.2.0.1
 
   * Support GHC 7.8.
