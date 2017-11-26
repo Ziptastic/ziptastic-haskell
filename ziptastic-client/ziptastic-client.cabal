@@ -31,8 +31,8 @@ library
     , base-compat           == 0.9.*
     , http-client
     , iso3166-country-codes
-    , servant               >= 0.9 && < 0.12
-    , servant-client        >= 0.9 && < 0.12
+    , servant               >= 0.9 && < 0.13
+    , servant-client        >= 0.9 && < 0.13
     , text
     , ziptastic-core        >= 0.2.0.1 && < 0.2.1
   default-language: Haskell2010
