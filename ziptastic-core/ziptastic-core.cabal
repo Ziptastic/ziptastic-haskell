@@ -35,7 +35,7 @@ library
     , bytestring            == 0.10.*
     , http-api-data         == 0.3.*
     , iso3166-country-codes >= 0.20140203.8
-    , servant               >= 0.9 && < 0.12
+    , servant               >= 0.9 && < 0.13
     , text                  >= 0.11
     , tz                    == 0.1.*
   default-language: Haskell2010
